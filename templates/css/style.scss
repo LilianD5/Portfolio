@@ -1,0 +1,160 @@
+// Importation reset CSS
+
+@import 'reset.scss';
+
+// Variables
+
+$yellow: #feffc2;
+$orange: #ffc39b;
+$coral: #ffc1c1;
+$purple: #dfbbfe;
+$blue: #bacdff;
+$green: #9bffca;
+
+$font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+
+// Général
+
+.noscroll{
+    height: 100%;
+    overflow: hidden;
+}
+
+body{
+    font-family: $font-family;
+}
+
+.sticky{
+    position: sticky;
+    top: 0;
+}
+
+.row-limit-size{
+    max-width: 1400px;
+    width: 95%;
+}
+
+.flex-between{
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-around{
+    display: flex;
+    justify-content: space-around;
+}
+
+.flex-wrap{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+// Section
+
+.section{
+    height: 100vh;
+    position: relative;
+}
+
+#home{
+    background-color: $yellow;
+}
+
+#projects{
+    background-color: $coral;
+}
+
+#resume{
+    background-color: $purple;
+}
+
+#contact{
+    background-color: $green;
+}
+
+// Section Header
+
+.section-header__container{
+    width: 90%;
+
+    &__nav{
+        max-width: 800px;
+        width: 50%;
+        float: right;
+
+        &__li{
+            line-height: 80px;
+            width: 15%;
+            text-align: center;
+
+            &__lien{
+                font-size: calc(15px + .6vw);
+                color: #000;
+                text-decoration: none;
+                text-transform: capitalize;
+                display: block;
+                height: 100%;
+            }
+        }
+    }  
+}
+
+// Section Btn
+
+.section__btns{
+    position: absolute;
+    bottom: 50px;
+    left: calc(50% - 200px);
+
+    &__btn{
+        width: 200px;
+        height : 100px;
+        background-color: #fff;
+        line-height: 100px;
+        text-align: center;
+        margin: 0 10px;
+        cursor: pointer;
+
+        &__text{
+            font-size: calc(15px + .6vw);
+            user-select: none;
+        }
+    }
+}
+
+#btn-alone{
+    left:calc(50% - 100px)
+}
+
+// Section s1 content
+
+.section__content{
+    display: block;
+    margin: 0 auto;
+    padding-top: 200px;
+}
+
+.section__content__title{
+    text-transform: uppercase;
+    font-size: calc(15px + 2vw);
+    font-weight: 400;
+}
+
+.section__content__para{
+    text-transform: uppercase;
+    font-size: calc(15px + 1.5vw);
+    font-weight: 300;
+    padding-top: 30px;
+    text-align: justify;
+}
+
+// Media
+
+@media screen and (min-width: 1000px) {
+    .max-font-size{
+        font-size: 21px;
+    }
+}
+
+
+

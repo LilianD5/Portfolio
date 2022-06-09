@@ -12,8 +12,18 @@ $blue: #bacdff;
 $green: #9bffca;
 
 $font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+$color1: #dedede;
+$color2: #070707;
 
 // Général
+
+.show{
+    display: block !important;
+}
+
+.none{
+    display: none;
+}
 
 .noscroll{
     height: 100%;
@@ -22,6 +32,7 @@ $font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 
 body{
     font-family: $font-family;
+    color: $color1;
 }
 
 .sticky{
@@ -31,7 +42,7 @@ body{
 
 .row-limit-size{
     max-width: 1400px;
-    width: 95%;
+    width: 85%;
 }
 
 .flex-between{
@@ -54,14 +65,17 @@ body{
 .section{
     height: 100vh;
     position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 #home{
-    background-color: $yellow;
+    background-image: url(../img/workplace.png);
+    
 }
 
 #projects{
-    background-color: $coral;
+    background-image: url(../img/project.png);
 }
 
 #resume{
@@ -79,7 +93,7 @@ body{
 
     &__nav{
         max-width: 800px;
-        width: 50%;
+        width: 70%;
         float: right;
 
         &__li{
@@ -88,12 +102,12 @@ body{
             text-align: center;
 
             &__lien{
-                font-size: calc(15px + .6vw);
-                color: #000;
+                font-size: calc(15px + .8vw);
                 text-decoration: none;
                 text-transform: capitalize;
                 display: block;
                 height: 100%;
+                color: $color1;
             }
         }
     }  
@@ -102,59 +116,170 @@ body{
 // Section Btn
 
 .section__btns{
-    position: absolute;
-    bottom: 50px;
-    left: calc(50% - 200px);
 
     &__btn{
-        width: 200px;
-        height : 100px;
-        background-color: #fff;
-        line-height: 100px;
+        border: 2px solid $color1;
+        width: 40vw;
+        max-width: 280px;
+        height : 8vh;
+        line-height: 8vh;
         text-align: center;
-        margin: 0 10px;
         cursor: pointer;
 
         &__text{
-            font-size: calc(15px + .6vw);
+            font-size: calc(15px + .8vw);
+            font-weight: 300;
             user-select: none;
         }
     }
+
+    &__btn:hover{
+        background-color: $color1;
+        color: #303030;
+        font-weight: 400;
+    }
 }
 
-#btn-alone{
-    left:calc(50% - 100px)
+.first-btn{
+    display: none;
+}
+
+.btns-s1{
+    margin: 5vh auto;
+}
+
+.btns-s2{
+    position: absolute;
+    justify-content: start;
+    top : 85vh;
+    left: 7.5vw;
+}
+
+.btn-back-s2{
+    margin-left: 5vw;
 }
 
 // Section s1 content
 
 .section__content{
-    display: block;
     margin: 0 auto;
-    padding-top: 200px;
+
+    &__title{
+        position: relative;
+        text-transform: uppercase;
+        font-size: calc(8px + 3vw);
+        font-weight: 100;
+        margin-bottom: 1vh;
+    }
+
+    &__title > span{
+        position: relative;
+    }
+
+    &__para{
+        text-transform: uppercase;
+        font-size: calc(8px + 2vw);
+        font-weight: 300;
+        padding-top: 30px;
+        text-align: justify;
+    }
 }
 
-.section__content__title{
-    text-transform: uppercase;
-    font-size: calc(15px + 2vw);
-    font-weight: 400;
+.content-s1{
+    display: none;
+    padding-top: 25vh;
 }
 
-.section__content__para{
-    text-transform: uppercase;
-    font-size: calc(15px + 1.5vw);
-    font-weight: 300;
-    padding-top: 30px;
-    text-align: justify;
+// Section s2 content
+
+.content-s2{
+    padding-top: 12vh;
+    height: 68vh;
+}
+
+.projects{
+    background-color: rgba($color2, .6);
+    width: 30vw;
+    height: 50vh;
+    border-radius: 15px;
+    border: solid 2px $color1;
+    position: absolute;
+    cursor: pointer;
+}
+
+.project1{
+    top: 12vh;
+    right: 7.5vw;
+}
+
+.project2{
+    top: 18vh;
+    right: 10vw;
+}
+
+.project3{
+    top: 24vh;
+    right: 12.5vw;
+}
+
+.project4{
+    top: 30vh;
+    right: 15vw;
+}
+
+#project-target{
+    width: 40vw;
+    height: 68vh;
+    border-radius: 15px;
+    position: absolute;
+    top: 12vh;
+    left: 7.5vw;
+}
+
+.project-selected{
+    width: 40vw;
+    height: 68vh;
+    top: 12vh;
+    left: 7.5vw;
+    z-index: 2;
+}
+
+.projects:hover{
+    background-color: $color2;
+    z-index: 1;
+}
+
+.see-github{
+    text-align: center;
+    line-height: 68vh;
+    font-size: 2vw;
+}
+
+.github-link{
+    color: $color1;
 }
 
 // Media
 
 @media screen and (min-width: 1000px) {
     .max-font-size{
-        font-size: 21px;
+        font-size: 23px;
     }
 }
 
+@media screen and (max-width: 768px) {
+    .row-limit-size{
+        width: 92%;
+    }
+}
 
-
+@media screen and (max-width: 500px) {
+    .section-header__container{
+        margin: 0 auto;
+        &__nav{
+            width: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+}

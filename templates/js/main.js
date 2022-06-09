@@ -4,6 +4,7 @@ let btnNext = document.getElementsByClassName('btn-next');
 let btnBack = document.getElementsByClassName('btn-back');
 let target = document.getElementsByClassName('section');
 
+
 function changeBlock(button, target) {
     button.addEventListener("click", function () {
         target.scrollIntoView();
@@ -32,52 +33,55 @@ changeBlock(btnNext[2], target[3]);
 // Vers 3
 changeBlock(btnBack[2], target[2]);
 
+// Function Affichage Titre
 
-// Function Animation Text Typing
-// First Animation
+const helloSpans = document.querySelectorAll('#hello span');
+const title = document.querySelector('#title');
+const portfolio = document.querySelector('#portfolio');
 
-let blocTitle = ["My name is lilian and this is my portfolio !"];
-let blocHello = ["Hello ! ", "And welcome !"];
-let blocText = ["in this websites, you'll find : ", "my resume, ", "some projects i worked on, ", "and other things you might find useful. ", "Or not. "];
-let blocEnd = ["So... ", "", "Let's get started, shall we ?"];
+const contentSection1 = document.querySelector('.content-s1');
 
-let blocTextContainer = document.getElementById('typing-text');
-let blocTitleContainer = document. getElementById('typing-title');
-let blocHelloContainer = document. getElementById('typing-hello');
-let blocEndContainer = document.getElementById('typing-end');
+function homepageAnim(){
+    window.addEventListener('load', () => {
 
-async function textTyping(blocSentence, container, delayLetters = 40, delayBloc = 700) {
-    for (const element of blocSentence) {
-        let letters = element.split("");
-        let lettersLength = letters.length;
-        let i = 0;
-        while (i < lettersLength) {
-            await waitDelay(delayLetters);
-            let divTyping = container;
-            divTyping.append(letters[i]);
-            i++
-        }
-        await waitDelay(delayBloc);
-    }
-    return;
+        btnNext[0].classList.add('show');
+        contentSection1.classList.add('show');
+
+        const TL = gsap.timeline({paused: true});
+
+        TL
+        .staggerFrom(helloSpans, 3, {top: -50, opacity: 0, ease: "power2.out"}, 0.3)
+        .from(title, 1.5, {top: -40, opacity: 0, ease: "power3.out"}, 1.5)
+        .from(portfolio, 2, {left: -80, opacity: 0, ease: "power2.out"}, 1)
+        .from(btnNext[0], 0.3, {opacity: 0, ease: "power2.out"});
+
+        TL.play();
+    })
 }
 
-function waitDelay(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms))
+if(document.cookie !== 'animControl=skip'){
+
+    homepageAnim();
+
+    document.cookie = 'animControl=skip';
+
+} else {
+    btnNext[0].classList.add('show');
+    contentSection1.classList.add('show');
 }
 
-setTimeout(() => {
-    textTyping(blocHello, blocHelloContainer);
-}, 1000);
+// Function Affichage du projet
 
-setTimeout(() => {
-    textTyping(blocTitle, blocTitleContainer)
-}, 4000);
+const projects = document.querySelectorAll('.projects');
+const githubLink = document.querySelector('.see-github');
 
-setTimeout(() => {
-    textTyping(blocText, blocTextContainer);
-}, 8000);
+function selectProjects(){
+    projects.forEach(element => {
+        element.addEventListener('click', function(){
+            element.classList.toggle('project-selected');
+            githubLink.classList.toggle('none');
+        })
+    });
+}
 
-setTimeout(() => {
-    textTyping(blocEnd, blocEndContainer);
-}, 19000);
+selectProjects();

@@ -79,7 +79,7 @@ body{
 }
 
 #resume{
-    background-color: $purple;
+    background-image: url(../img/black-370118.png);
 }
 
 #contact{
@@ -153,16 +153,34 @@ body{
     justify-content: start;
     top : 85vh;
     left: 7.5vw;
+
+    &__btn-back{
+        margin-left: 5vw;
+    }
 }
 
-.btn-back-s2{
-    margin-left: 5vw;
+.btns-s3{
+    position: absolute;
+    justify-content: end;
+    top : 85vh;
+    right: 7.5vw;
+
+    &__btn-back{
+        margin-left: 5vw;
+    }
+}
+
+// Section Content
+
+.section__content{
+    margin: 0 auto;
 }
 
 // Section s1 content
 
-.section__content{
-    margin: 0 auto;
+.content-s1{
+    display: none;
+    padding-top: 25vh;
 
     &__title{
         position: relative;
@@ -185,55 +203,65 @@ body{
     }
 }
 
-.content-s1{
-    display: none;
-    padding-top: 25vh;
-}
-
 // Section s2 content
 
 .content-s2{
     padding-top: 12vh;
     height: 68vh;
-}
 
-.projects{
-    background-color: rgba($color2, .6);
-    width: 30vw;
-    height: 50vh;
-    border-radius: 15px;
-    border: solid 2px $color1;
-    position: absolute;
-    cursor: pointer;
-}
+    &__projects{
+        background-color: rgba($color2, .6);
+        width: 30vw;
+        height: 50vh;
+        border-radius: 15px;
+        border: solid 2px $color1;
+        position: absolute;
+        cursor: pointer;
+    }
 
-.project1{
-    top: 12vh;
-    right: 7.5vw;
-}
+    &__projects:hover{
+        background-color: $color2;
+        z-index: 1;
+    }
 
-.project2{
-    top: 18vh;
-    right: 10vw;
-}
+    &__project1{
+        top: 12vh;
+        right: 7.5vw;
+    }
 
-.project3{
-    top: 24vh;
-    right: 12.5vw;
-}
+    &__project2{
+        top: 18vh;
+        right: 10vw;
+    }
 
-.project4{
-    top: 30vh;
-    right: 15vw;
-}
+    &__project3{
+        top: 24vh;
+        right: 12.5vw;
+    }
 
-#project-target{
-    width: 40vw;
-    height: 68vh;
-    border-radius: 15px;
-    position: absolute;
-    top: 12vh;
-    left: 7.5vw;
+    &__project4{
+        top: 30vh;
+        right: 15vw;
+    }
+
+    &__project-target{
+        width: 40vw;
+        height: 68vh;
+        border-radius: 15px;
+        position: absolute;
+        top: 12vh;
+        left: 7.5vw;
+
+        &__see-github{
+            text-align: center;
+            line-height: 68vh;
+            font-size: 2vw;
+
+            &__link{
+                color: $color1;
+            }
+        }
+    }
 }
 
 .project-selected{
@@ -244,19 +272,61 @@ body{
     z-index: 2;
 }
 
-.projects:hover{
-    background-color: $color2;
-    z-index: 1;
+.pointer-event-none{
+    pointer-events: none;
 }
 
-.see-github{
-    text-align: center;
-    line-height: 68vh;
-    font-size: 2vw;
-}
+// Section s3 content
 
-.github-link{
-    color: $color1;
+.content-s3{
+    padding-top: 12vh;
+    height: 68vh;
+
+    &__cv{
+        width: 30vw;
+        height: 68vh;
+        border-radius: 5px;
+        background-color: $color1;
+        position: absolute;
+        top: 12vh;
+        left: 7.5vw;
+        color: $color2;
+
+        &__resume{
+            font-size: 2vw;
+            text-transform: uppercase;
+            margin: 5vh 0;
+            text-align: center;
+        }
+
+        &__job{
+            font-size: 1.3vw;
+            width: 80%;
+            margin: 3vh auto;
+        }
+
+        &__download{
+            width: 80%;
+            margin: 0 auto;
+
+            &__pdf{
+                width: 50%;
+                margin-top: 6vh;
+                text-align: center;
+
+                &__icon{
+                    width: 40%;
+                    cursor: pointer;
+                }
+
+                &__filename{
+                    font-size: 1vw;
+                    font-weight: 500;
+                    margin-top: 1vh;
+                }
+            }
+        }
+    }
 }
 
 // Media

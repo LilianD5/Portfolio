@@ -118,7 +118,7 @@ body {
 }
 
 #resume {
-  background-color: #dfbbfe;
+  background-image: url(../img/black-370118.png);
 }
 
 #contact {
@@ -192,7 +192,20 @@ body {
   left: 7.5vw;
 }
 
-.btn-back-s2 {
+.btns-s2__btn-back {
+  margin-left: 5vw;
+}
+
+.btns-s3 {
+  position: absolute;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  top: 85vh;
+  right: 7.5vw;
+}
+
+.btns-s3__btn-back {
   margin-left: 5vw;
 }
 
@@ -200,7 +213,12 @@ body {
   margin: 0 auto;
 }
 
-.section__content__title {
+.content-s1 {
+  display: none;
+  padding-top: 25vh;
+}
+
+.content-s1__title {
   position: relative;
   text-transform: uppercase;
   font-size: calc(8px + 3vw);
@@ -208,11 +226,11 @@ body {
   margin-bottom: 1vh;
 }
 
-.section__content__title > span {
+.content-s1__title > span {
   position: relative;
 }
 
-.section__content__para {
+.content-s1__para {
   text-transform: uppercase;
   font-size: calc(8px + 2vw);
   font-weight: 300;
@@ -220,17 +238,12 @@ body {
   text-align: justify;
 }
 
-.content-s1 {
-  display: none;
-  padding-top: 25vh;
-}
-
 .content-s2 {
   padding-top: 12vh;
   height: 68vh;
 }
 
-.projects {
+.content-s2__projects {
   background-color: rgba(7, 7, 7, 0.6);
   width: 30vw;
   height: 50vh;
@@ -240,33 +253,48 @@ body {
   cursor: pointer;
 }
 
-.project1 {
+.content-s2__projects:hover {
+  background-color: #070707;
+  z-index: 1;
+}
+
+.content-s2__project1 {
   top: 12vh;
   right: 7.5vw;
 }
 
-.project2 {
+.content-s2__project2 {
   top: 18vh;
   right: 10vw;
 }
 
-.project3 {
+.content-s2__project3 {
   top: 24vh;
   right: 12.5vw;
 }
 
-.project4 {
+.content-s2__project4 {
   top: 30vh;
   right: 15vw;
 }
 
-#project-target {
+.content-s2__project-target {
   width: 40vw;
   height: 68vh;
   border-radius: 15px;
   position: absolute;
   top: 12vh;
   left: 7.5vw;
+}
+
+.content-s2__project-target__see-github {
+  text-align: center;
+  line-height: 68vh;
+  font-size: 2vw;
+}
+
+.content-s2__project-target__see-github__link {
+  color: #dedede;
 }
 
 .project-selected {
@@ -277,19 +305,59 @@ body {
   z-index: 2;
 }
 
-.projects:hover {
-  background-color: #070707;
-  z-index: 1;
+.pointer-event-none {
+  pointer-events: none;
 }
 
-.see-github {
-  text-align: center;
-  line-height: 68vh;
+.content-s3 {
+  padding-top: 12vh;
+  height: 68vh;
+}
+
+.content-s3__cv {
+  width: 30vw;
+  height: 68vh;
+  border-radius: 5px;
+  background-color: #dedede;
+  position: absolute;
+  top: 12vh;
+  left: 7.5vw;
+  color: #070707;
+}
+
+.content-s3__cv__resume {
   font-size: 2vw;
+  text-transform: uppercase;
+  margin: 5vh 0;
+  text-align: center;
 }
 
-.github-link {
-  color: #dedede;
+.content-s3__cv__job {
+  font-size: 1.3vw;
+  width: 80%;
+  margin: 3vh auto;
+}
+
+.content-s3__cv__download {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.content-s3__cv__download__pdf {
+  width: 50%;
+  margin-top: 6vh;
+  text-align: center;
+}
+
+.content-s3__cv__download__pdf__icon {
+  width: 40%;
+  cursor: pointer;
+}
+
+.content-s3__cv__download__pdf__filename {
+  font-size: 1vw;
+  font-weight: 500;
+  margin-top: 1vh;
 }
 
 @media screen and (min-width: 1000px) {

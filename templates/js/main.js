@@ -72,14 +72,21 @@ if(document.cookie !== 'animControl=skip'){
 
 // Function Affichage du projet
 
-const projects = document.querySelectorAll('.projects');
-const githubLink = document.querySelector('.see-github');
+const projects = document.querySelectorAll('.content-s2__projects');
+const githubLink = document.querySelector('.content-s2__project-target__see-github');
 
 function selectProjects(){
     projects.forEach(element => {
         element.addEventListener('click', function(){
+
             element.classList.toggle('project-selected');
             githubLink.classList.toggle('none');
+
+            projects.forEach(element => {
+                element.classList.toggle('pointer-event-none');
+            });
+
+            element.classList.toggle('pointer-event-none');
         })
     });
 }

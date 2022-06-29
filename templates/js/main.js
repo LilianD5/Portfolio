@@ -74,6 +74,7 @@ if(document.cookie !== 'animControl=skip'){
 
 const projects = document.querySelectorAll('.content-s2__projects');
 const githubLink = document.querySelector('.content-s2__project-target__see-github');
+let windowWidth = window.innerWidth;
 
 function selectProjects(){
     projects.forEach(element => {
@@ -91,4 +92,125 @@ function selectProjects(){
     });
 }
 
-selectProjects();
+if(windowWidth > 768){
+    selectProjects();
+}
+
+window.addEventListener('resize', function(){
+
+    let newWindowWidth = window.innerWidth;
+
+    if(newWindowWidth> 768){
+        selectProjects();
+    }
+})
+
+// Function gestion de la hauteur
+
+// let windowHeight = window.innerHeight;
+// const sections = document.querySelectorAll('.section');
+
+// function windowHeightFix(){
+//     window.addEventListener('resize', function(){
+
+//         let newWindowHeight = window.innerHeight;
+
+//         if(windowHeight >= newWindowHeight){
+//             sections.forEach(element => {
+//                 element.style.height = windowHeight + "px";
+//             });
+//         } else {
+
+//             for (let i = 0; i < sections.length; i++) {
+//                 window.location.assign('');
+//             }
+//         }
+//     })
+// }
+
+// windowHeightFix();
+
+// Function calcul du left btn section 4
+
+let btnS4 = Array.from(document.getElementsByClassName('btns-s4'));
+// console.log(btnS4);
+
+function left(){
+
+    let windowWidth = window.innerWidth;
+    let limitSize = windowWidth * 0.85;
+
+    console.log(windowWidth);
+    console.log(limitSize);
+
+    if(limitSize > 1400){
+
+        let left = (windowWidth - 1400) / 2;
+        // console.log(left);
+        btnS4.forEach(element => {
+            element.style.left = left + "px";
+        });
+        
+
+    } else if(windowWidth > 768) {
+
+        let left = (windowWidth * 7.5) / 100;
+        btnS4.forEach(element => {
+            element.style.left = left + "px";
+        });
+
+    } else {
+        let left = (windowWidth * 4) / 100;
+        btnS4.forEach(element => {
+            element.style.left = left + "px";
+        });
+    }
+}
+
+window.addEventListener('resize', function(){
+    left();
+})
+
+left();
+
+// Function ouverture/fermeture formulaire de contact
+
+const btnContact = document.getElementById('btn-contact');
+const btnBackForm = document.getElementById('btn-back-form');
+const form = document.getElementById('form');
+
+// console.log(btnContact);
+// console.log(form);
+
+function openForm(){
+    btnContact.addEventListener('click', function(){
+        form.classList.add('show');
+    })
+}
+
+function closeForm(){
+    btnBackForm.addEventListener('click', function(){
+        form.classList.remove('show');
+    })
+}
+
+openForm();
+
+closeForm();
+
+// Function close modal
+
+const btnClose = document.getElementById('close-modal');
+const modal = document.getElementById('modal');
+
+function closeModal(){
+    btnClose.addEventListener('click', () => {
+        modal.classList.add('none');
+    })
+}
+
+closeModal();
+
+
+
+

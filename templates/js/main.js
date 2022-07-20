@@ -105,31 +105,6 @@ window.addEventListener('resize', function(){
     }
 })
 
-// Function gestion de la hauteur
-
-// let windowHeight = window.innerHeight;
-// const sections = document.querySelectorAll('.section');
-
-// function windowHeightFix(){
-//     window.addEventListener('resize', function(){
-
-//         let newWindowHeight = window.innerHeight;
-
-//         if(windowHeight >= newWindowHeight){
-//             sections.forEach(element => {
-//                 element.style.height = windowHeight + "px";
-//             });
-//         } else {
-
-//             for (let i = 0; i < sections.length; i++) {
-//                 window.location.assign('');
-//             }
-//         }
-//     })
-// }
-
-// windowHeightFix();
-
 // Function calcul du left btn section 4
 
 let btnS4 = Array.from(document.getElementsByClassName('btns-s4'));

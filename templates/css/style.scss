@@ -6,12 +6,12 @@
 
 @font-face {
     font-family: 'Audiowide';
-    src: url(../font/Audiowide-Regular.ttf);
+    src: url('../font/Audiowide-Regular.ttf');
 }
 
 @font-face {
     font-family: 'Open Sans';
-    src: url(../font/OpenSans-VariableFont_wdth\,wght.ttf);
+    src: url('../font/OpenSans-VariableFont_wdth\,wght.ttf');
 }
 
 $font-family: 'Open Sans', Arial, Helvetica, sans-serif;
@@ -63,6 +63,35 @@ body{
     flex-wrap: wrap;
 }
 
+// Langue
+
+.btns-lang{
+    margin: 0 auto;
+    padding-top: 22vh;
+    width: 50%;
+}
+
+.btns-lang-link{
+    color: $color1;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.btn-lang:hover .btns-lang-link {
+    color: $color2;
+}
+
+#btn-lang-en{
+    margin-left: 5vw;
+}
+
+.lang-title{
+    text-align: center;
+    font-size: calc(8px + 2.5vw);
+    padding-top: 20vh;
+}
 // Section
 
 .section{
@@ -353,6 +382,7 @@ body{
 .overview-more-bottom > a{
     color: $color1;
     text-align: center;
+    font-size: 2vw;
 }
 
 // Section s3 content
@@ -405,11 +435,11 @@ body{
             bottom: 0;
 
             &__pdf{
-                width: 50%;
+                width: 100%;
                 text-align: center;
 
                 &__icon{
-                    width: 40%;
+                    width: 20%;
                     min-width: 76.8px;
                     cursor: pointer;
                 }
@@ -666,6 +696,10 @@ body{
     #modal{
         font-size: 14.4px;
     }
+
+    .btns-lang{
+        width: 80%;
+    }
 }
 
 @media screen and (max-width: 1000px) {
@@ -684,6 +718,8 @@ body{
         font-size: 10px;
         line-height: 10px;
     }
+
+    
 }
 
 @media screen and (max-width: 768px) {
@@ -701,6 +737,21 @@ body{
     .noscroll{
         height: auto;
         overflow: visible;
+    }
+
+    // Lang
+
+    .btns-lang{
+        display: block;
+        width: 95%;
+    }
+
+    .btn-lang{
+        margin: 0 auto;
+    }
+
+    #btn-lang-en{
+        margin: 2.5vh auto;
     }
 
     // Header
@@ -762,17 +813,22 @@ body{
 
     // Content
 
+    .section__content{
+        width: 100%;
+    }
+
     .content-s1{
-        padding-top: 30vh;
+        text-align: center;
     }
 
     .content-s2{
         padding-top: 0;
         height: auto;
+        
     
         &__projects{
             background-color: rgba($color2, .6);
-            width: 80vw;
+            width: 90vw;
             height: 70vh;
             margin: 0 auto 5vh;
             position: static;
@@ -808,16 +864,12 @@ body{
         display: block;
     
         &__cv{
-            width: 80vw;
+            width: 95vw;
             height: 70vh;
             border-radius: 15px;
-            background-color: $color1;
-            color: $color2;
             margin: 0 auto;
     
-            &__hr{
-                width: 80%;
-            }
+            
     
             &__resume{
                 font-size: 25px;
@@ -841,10 +893,8 @@ body{
             }
     
             &__download{
-                width: 80%;
+                width: 90%;
                 margin: 0 auto;
-                position: relative;
-                bottom: 0;
     
                 &__pdf{
                     width: 50%;
@@ -892,5 +942,9 @@ body{
 @media screen and (max-width: 500px) {
     .content-s3__techno__side__end__tag{
         font-size: 18px;
+    }
+
+    .content-s2__projects__img{
+        width: 80%;
     }
 }
